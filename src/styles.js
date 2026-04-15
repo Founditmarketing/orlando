@@ -226,8 +226,8 @@ img{max-width:100%;display:block}
 .why-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
 .why-imgs img{width:100%;border-radius:var(--rl);border:1px solid var(--brd);transition:all 0.4s var(--ease)}
 .why-imgs img:hover{border-color:var(--brd2);transform:translateY(-2px)}
-.sponsors{margin-top:56px;text-align:center}
-.sponsors img{max-width:880px;margin:0 auto;opacity:0.65;filter:brightness(1.2);transition:opacity 0.4s}
+.sponsors{margin-top:56px;text-align:center;overflow:hidden}
+.sponsors img{max-width:880px;width:100%;margin:0 auto;opacity:0.65;filter:brightness(1.2);transition:opacity 0.4s}
 .sponsors:hover img{opacity:0.85}
 
 /* ─── CONTACT ─── */
@@ -257,7 +257,7 @@ img{max-width:100%;display:block}
 .ci-text a:hover{color:var(--tl)}
 
 /* ─── COMPARISON TABLE ─── */
-.cmp{margin-top:48px;overflow:hidden;border-radius:var(--rl);border:1px solid var(--brd)}
+.cmp{margin-top:48px;overflow:hidden;border-radius:var(--rl);border:1px solid var(--brd);overflow-x:auto;-webkit-overflow-scrolling:touch}
 .cmp table{width:100%;border-collapse:collapse}
 .cmp th,.cmp td{padding:16px 20px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--brd)}
 .cmp th{background:var(--card);color:var(--t2);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:1.5px}
