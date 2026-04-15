@@ -204,7 +204,72 @@ export default function OLDv2() {
         </div>
       </div>
 
-      {/* ═══ SERVICES ═══ */}
+      {/* ═══ TESTIMONIALS — Trust first for paid traffic ═══ */}
+      <section className="sec testi-bg" id="reviews">
+        <div className="sec-in">
+          <div ref={r10.ref} className={`rv ${r10.v?"v":""}`} style={{textAlign:"center"}}>
+            <div className="lab" style={{justifyContent:"center"}}>Patient Stories</div>
+            <h2 className="stl">Real Results. <em>Real People.</em></h2>
+            <p className="sdesc" style={{margin:"0 auto"}}>Over 200 five-star Google reviews. Every patient and case is different — we recommend a consultation with a 3D radiograph to determine if implants are right for you.</p>
+          </div>
+          <div className="testi-grid">
+            {testimonials.map((t, i) => (
+              <div key={i} className="tg-card">
+                <div className="tg-stars">{[1,2,3,4,5].map(j=><Star key={j}/>)}</div>
+                <p className="tg-text">"{t.text}"</p>
+                <div className="tg-author">{t.name}</div>
+                <div className="tg-loc">{t.loc}</div>
+              </div>
+            ))}
+          </div>
+          <div className="tg-google">
+            <div className="tg-google-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span><strong>5.0</strong> rating · 200+ reviews on Google</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ DOCTOR — Personal trust, right after social proof ═══ */}
+      <section className="sec" id="doctor" style={{background:"var(--bg2)"}}>
+        <div className="sec-in">
+          <div ref={r7.ref} className={`rv ${r7.v?"v":""}`}>
+            <div className="lab">Meet Your Doctor</div>
+            <h2 className="stl">Dr. Michael <em>Gagaoudakis</em></h2>
+            <p className="sdesc">Michael Gagaoudakis DMD, CDE-AGD</p>
+          </div>
+          <div ref={r8.ref} className={`rv doc-grid ${r8.v?"v":""}`} style={{transitionDelay:"0.15s"}}>
+            <div className="doc-img">
+              <img src={IMG.drMike} alt="Dr. Michael Gagaoudakis — Orlando Lifestyle Dentistry"/>
+            </div>
+            <div>
+              <div className="doc-text">
+                <h3>"People over profit — always."</h3>
+                <p>With 8 years of formal training, 20 years of implant placement & restoration experience, and hundreds of hours of continuing education, Dr. Michael Gagaoudakis is highly qualified to do your implant surgery and restoration. But more than experience, certifications, and accolades — the biggest reason patients love him is because he cares.</p>
+                <p>Dr. Mike is the owner and operator of Orlando Lifestyle Dentistry. He's been in business in the Orlando area for 15 years and has established a patient following of over 4,000 patients. He created the 123Teeth™ dental implant workflow that helps patients avoid bone grafting and dentures, saving months or years in their restoration process.</p>
+                <p>He is a certified PACE Continuing Education provider for the AGD, which means he holds special accreditation to teach dentists to place and restore dental implants. He has taught hundreds of dentists advanced surgical and restorative techniques across 30+ states.</p>
+              </div>
+              <div className="doc-creds">
+                {["Nova Southeastern DMD","AGD Accredited (CDE)","Sedation & Anxiolysis","Zygomatic Implants","TMJ/Occlusion Therapy","Lab Technician Cert.","CAD/CAM+ Manufacturing","123Teeth™ Creator","National Speaker"].map(t=><span key={t} className="doc-tag">{t}</span>)}
+              </div>
+              {/* YouTube Video */}
+              <div className="vid-wrap" style={{marginTop:32}}>
+                <iframe src="https://www.youtube.com/embed/videoseries?list=UU_YourChannelPlaylistID" title="Dr. Mike — Orlando Lifestyle Dentistry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy"/>
+              </div>
+              <p style={{fontSize:12,color:"var(--t3)",marginTop:8,fontStyle:"italic"}}>Watch Dr. Mike explain the 123Teeth™ process and hear from real patients</p>
+            </div>
+          </div>
+          {/* Practice Gallery — merged into doctor section */}
+          <div ref={r13.ref} className={`rv gallery ${r13.v?"v":""}`} style={{marginTop:48}}>
+            <div className="gallery-grid">
+              {practicePhotos.map((src, i) => <img key={i} src={src} alt={`Orlando Lifestyle Dentistry practice photo ${i+1}`}/>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SERVICES — Now positioned after trust is established ═══ */}
       <section className="sec" id="services">
         <div className="sec-in">
           <div ref={r1.ref} className={`rv ${r1.v?"v":""}`}>
@@ -358,55 +423,7 @@ export default function OLDv2() {
         </div>
       </section>
 
-      {/* ═══ DOCTOR ═══ */}
-      <section className="sec" id="doctor" style={{background:"var(--bg2)"}}>
-        <div className="sec-in">
-          <div ref={r7.ref} className={`rv ${r7.v?"v":""}`}>
-            <div className="lab">Meet Your Doctor</div>
-            <h2 className="stl">Dr. Michael <em>Gagaoudakis</em></h2>
-            <p className="sdesc">Michael Gagaoudakis DMD, CDE-AGD</p>
-          </div>
-          <div ref={r8.ref} className={`rv doc-grid ${r8.v?"v":""}`} style={{transitionDelay:"0.15s"}}>
-            <div className="doc-img">
-              <img src={IMG.drMike} alt="Dr. Michael Gagaoudakis — Orlando Lifestyle Dentistry"/>
-            </div>
-            <div>
-              <div className="doc-text">
-                <h3>"People over profit — always."</h3>
-                <p>With 8 years of formal training, 20 years of implant placement & restoration experience, and hundreds of hours of continuing education, Dr. Michael Gagaoudakis is highly qualified to do your implant surgery and restoration. But more than experience, certifications, and accolades — the biggest reason patients love him is because he cares.</p>
-                <p>Dr. Mike is the owner and operator of Orlando Lifestyle Dentistry. He's been in business in the Orlando area for 15 years and has established a patient following of over 4,000 patients. He created the 123Teeth™ dental implant workflow that helps patients avoid bone grafting and dentures, saving months or years in their restoration process.</p>
-                <p>He is a certified PACE Continuing Education provider for the AGD, which means he holds special accreditation to teach dentists to place and restore dental implants. He has taught hundreds of dentists advanced surgical and restorative techniques across 30+ states.</p>
-              </div>
-              <div className="doc-creds">
-                {["Nova Southeastern DMD","AGD Accredited (CDE)","Sedation & Anxiolysis","Zygomatic Implants","TMJ/Occlusion Therapy","Lab Technician Cert.","CAD/CAM+ Manufacturing","123Teeth™ Creator","National Speaker"].map(t=><span key={t} className="doc-tag">{t}</span>)}
-              </div>
-              {/* YouTube Video */}
-              <div className="vid-wrap" style={{marginTop:32}}>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=UU_YourChannelPlaylistID" title="Dr. Mike — Orlando Lifestyle Dentistry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy"/>
-              </div>
-              <p style={{fontSize:12,color:"var(--t3)",marginTop:8,fontStyle:"italic"}}>Watch Dr. Mike explain the 123Teeth™ process and hear from real patients</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ PRACTICE GALLERY ═══ */}
-      <section className="sec">
-        <div className="sec-in">
-          <div ref={r13.ref} className={`rv ${r13.v?"v":""}`} style={{textAlign:"center"}}>
-            <div className="lab" style={{justifyContent:"center"}}>Our Practice</div>
-            <h2 className="stl">Meet <em>Orlando Lifestyle</em> Dentistry</h2>
-            <p className="sdesc" style={{margin:"0 auto"}}>We believe your smile should reflect the very best of you. Using advanced technology and a modern aesthetic approach, we combine clinical precision with exceptional comfort — setting a new standard for dental care in Orlando.</p>
-          </div>
-          <div className="gallery">
-            <div className="gallery-grid">
-              {practicePhotos.map((src, i) => <img key={i} src={src} alt={`Orlando Lifestyle Dentistry practice photo ${i+1}`}/>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ WHY CHOOSE US + COMPARISON TABLE ═══ */}
+      {/* ═══ WHY CHOOSE US + COMPARISON TABLE — Objection handling before form ═══ */}
       <section className="sec" style={{background:"var(--bg2)"}}>
         <div className="sec-in">
           <div ref={r9.ref} className={`rv ${r9.v?"v":""}`} style={{textAlign:"center"}}>
@@ -450,33 +467,6 @@ export default function OLDv2() {
           </div>
           <div style={{textAlign:"center",marginTop:40}}>
             <a href="#contact" className="bp">Book Free Consultation <Arrow/></a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ TESTIMONIALS ═══ */}
-      <section className="sec testi-bg" id="reviews">
-        <div className="sec-in">
-          <div ref={r10.ref} className={`rv ${r10.v?"v":""}`} style={{textAlign:"center"}}>
-            <div className="lab" style={{justifyContent:"center"}}>Patient Stories</div>
-            <h2 className="stl">Real Results. <em>Real People.</em></h2>
-            <p className="sdesc" style={{margin:"0 auto"}}>Over 200 five-star Google reviews. Every patient and case is different — we recommend a consultation with a 3D radiograph to determine if implants are right for you.</p>
-          </div>
-          <div className="testi-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="tg-card">
-                <div className="tg-stars">{[1,2,3,4,5].map(j=><Star key={j}/>)}</div>
-                <p className="tg-text">"{t.text}"</p>
-                <div className="tg-author">{t.name}</div>
-                <div className="tg-loc">{t.loc}</div>
-              </div>
-            ))}
-          </div>
-          <div className="tg-google">
-            <div className="tg-google-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              <span><strong>5.0</strong> rating · 200+ reviews on Google</span>
-            </div>
           </div>
         </div>
       </section>
