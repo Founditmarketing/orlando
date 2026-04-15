@@ -90,6 +90,8 @@ export default function OLDv2() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 50); window.addEventListener("scroll", fn, { passive: true }); return () => window.removeEventListener("scroll", fn); }, []);
+  const [showSticky, setShowSticky] = useState(false);
+  useEffect(() => { const fn = () => setShowSticky(window.scrollY > 600); window.addEventListener("scroll", fn, { passive: true }); return () => window.removeEventListener("scroll", fn); }, []);
 
   const r1=useReveal(),r2=useReveal(),r3=useReveal(),r4=useReveal(),r5=useReveal(),r6=useReveal(),r7=useReveal(),r8=useReveal(),r9=useReveal(),r10=useReveal(),r11=useReveal(),r12=useReveal(),r13=useReveal();
   const c1=useCounter(20000,2500),c2=useCounter(2000,2000),c3=useCounter(20,1500),c4=useCounter(98,2000);
@@ -404,15 +406,40 @@ export default function OLDv2() {
         </div>
       </section>
 
-      {/* ═══ WHY CHOOSE US ═══ */}
+      {/* ═══ WHY CHOOSE US + COMPARISON TABLE ═══ */}
       <section className="sec" style={{background:"var(--bg2)"}}>
         <div className="sec-in">
           <div ref={r9.ref} className={`rv ${r9.v?"v":""}`} style={{textAlign:"center"}}>
             <div className="lab" style={{justifyContent:"center"}}>The Difference</div>
-            <h2 className="stl">Why Choose <em>Orlando Lifestyle</em> Dentistry?</h2>
-            <p className="sdesc" style={{margin:"0 auto"}}>There are plenty of dentists in the Orlando area. So why should you choose us to take care of your smile?</p>
+            <h2 className="stl">Why Choose <em>Orlando Lifestyle</em> Over Corporate Chains?</h2>
+            <p className="sdesc" style={{margin:"0 auto"}}>Most implant ads lead to corporate chains where you're a number. Here, Dr. Mike personally handles your case from start to finish.</p>
           </div>
-          <div className="why-imgs">
+
+          {/* COMPARISON TABLE */}
+          <div className="cmp">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Orlando Lifestyle</th>
+                  <th>Corporate Chains</th>
+                  <th>General Dentists</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Owner-doctor does your surgery</td><td><span className="cmp-check">✓ Dr. Mike personally</span></td><td><span className="cmp-x">✗ Rotating doctors</span></td><td><span className="cmp-x">✗ Often refers out</span></td></tr>
+                <tr><td>On-site zirconia lab</td><td><span className="cmp-check">✓ Same-building lab</span></td><td><span className="cmp-x">✗ Outsourced</span></td><td><span className="cmp-x">✗ Outsourced</span></td></tr>
+                <tr><td>3-visit completion (123Teeth™)</td><td><span className="cmp-check">✓ Proprietary process</span></td><td><span className="cmp-x">✗ 6–12 months typical</span></td><td><span className="cmp-x">✗ 12–18 months</span></td></tr>
+                <tr><td>Transparent pricing upfront</td><td><span className="cmp-check">✓ Published prices</span></td><td><span className="cmp-x">✗ Quote after consult</span></td><td><span className="cmp-x">✗ Quote after consult</span></td></tr>
+                <tr><td>IV sedation in-house</td><td><span className="cmp-check">✓ Comfortable sedation</span></td><td><span className="cmp-check">✓ Usually available</span></td><td><span className="cmp-x">✗ Rarely offered</span></td></tr>
+                <tr><td>20,000+ implants placed</td><td><span className="cmp-check">✓ By one doctor</span></td><td><span className="cmp-check">✓ Across many doctors</span></td><td><span className="cmp-x">✗ Limited experience</span></td></tr>
+                <tr><td>Lifetime warranty included</td><td><span className="cmp-check">✓ Lifestyle Warranty</span></td><td><span className="cmp-x">✗ Limited/varies</span></td><td><span className="cmp-x">✗ Not offered</span></td></tr>
+                <tr><td>Financing from $99/mo</td><td><span className="cmp-check">✓ 6+ lender options</span></td><td><span className="cmp-check">✓ Usually 1–2 options</span></td><td><span className="cmp-x">✗ Limited</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="why-imgs" style={{marginTop:36}}>
             <img src={IMG.whyAdvantages} alt="Advantages of Orlando Lifestyle Dentistry"/>
             <img src={IMG.whySedation} alt="Sedation dentistry options"/>
             <img src={IMG.whyRelationship} alt="Patient relationship approach"/>
@@ -420,6 +447,9 @@ export default function OLDv2() {
           </div>
           <div className="sponsors">
             <img src={IMG.sponsors} alt="Sponsors and affiliates"/>
+          </div>
+          <div style={{textAlign:"center",marginTop:40}}>
+            <a href="#contact" className="bp">Book Free Consultation <Arrow/></a>
           </div>
         </div>
       </section>
@@ -520,6 +550,11 @@ export default function OLDv2() {
           </div>
         </div>
       </footer>
+
+      {/* STICKY DESKTOP CTA */}
+      <div className={`sticky-desk ${showSticky?"show":""}`}>
+        <a href="#contact"><Arrow/> Book Now</a>
+      </div>
 
       {/* STICKY MOBILE CTA */}
       <div className="sticky">

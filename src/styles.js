@@ -256,6 +256,27 @@ img{max-width:100%;display:block}
 .ci-text a{color:var(--teal);text-decoration:none;transition:color 0.3s}
 .ci-text a:hover{color:var(--tl)}
 
+/* ─── COMPARISON TABLE ─── */
+.cmp{margin-top:48px;overflow:hidden;border-radius:var(--rl);border:1px solid var(--brd)}
+.cmp table{width:100%;border-collapse:collapse}
+.cmp th,.cmp td{padding:16px 20px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--brd)}
+.cmp th{background:var(--card);color:var(--t2);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:1.5px}
+.cmp th:first-child{color:var(--t3)}
+.cmp th:nth-child(2){color:var(--teal);background:linear-gradient(180deg,rgba(20,178,202,0.08),var(--card))}
+.cmp td:nth-child(2){color:var(--t1);font-weight:500}
+.cmp td{color:var(--t3);font-weight:300}
+.cmp td:first-child{color:var(--t2);font-weight:500}
+.cmp tr:last-child td{border-bottom:none}
+.cmp tr:hover td{background:rgba(20,178,202,0.02)}
+.cmp-check{color:var(--teal)}
+.cmp-x{color:#E05252;opacity:0.6}
+
+/* ─── STICKY DESKTOP CTA ─── */
+.sticky-desk{position:fixed;right:28px;bottom:28px;z-index:800;opacity:0;transform:translateY(20px);pointer-events:none;transition:all 0.4s var(--ease)}
+.sticky-desk.show{opacity:1;transform:translateY(0);pointer-events:all}
+.sticky-desk a{display:flex;align-items:center;gap:9px;padding:16px 32px;border-radius:50px;background:var(--teal);color:var(--bg);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--sans);box-shadow:0 8px 36px var(--tg),0 0 0 1px rgba(20,178,202,0.3);transition:all 0.3s var(--ease);letter-spacing:0.3px}
+.sticky-desk a:hover{background:var(--td);transform:translateY(-2px);box-shadow:0 14px 48px var(--tg),0 0 0 1px var(--teal)}
+
 /* ─── FINAL CTA ─── */
 .final-cta{padding:64px 32px;text-align:center;background:var(--bg2);border-top:1px solid var(--brd);position:relative;overflow:hidden}
 .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(20,178,202,0.06),transparent);pointer-events:none}
@@ -301,6 +322,8 @@ img{max-width:100%;display:block}
   .testi-grid{grid-template-columns:1fr}
   .urgency{flex-direction:column;gap:6px;text-align:center}
   .vid-wrap{margin-top:24px}
+  .sticky-desk{display:none}
+  .cmp th,.cmp td{padding:12px 14px;font-size:12px}
 }
 @media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
 `;
