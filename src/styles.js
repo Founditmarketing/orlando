@@ -360,6 +360,46 @@ img{max-width:100%;display:block}
   .vid-wrap{margin-top:24px}
   .sticky-desk{display:none}
   .cmp th,.cmp td{padding:12px 14px;font-size:12px}
+
+  /* ─── MOBILE CONVERSION MODE: hide non-essential sections ─── */
+
+  /* Hide entire sections */
+  .cred{display:none}                    /* credential bar */
+  .testi-bg{display:none}               /* testimonials section */
+  .stats-sec{display:none}              /* animated stats */
+  .final-cta{display:none}              /* final CTA — sticky bar handles it */
+
+  /* Doctor section — keep photo + name only, hide bio detail */
+  .doc-text p{display:none}
+  .doc-creds{display:none}
+  .vid-wrap{display:none}
+  .doc-img{max-width:220px;margin:0 auto}
+
+  /* Services — hide before/after entirely */
+  .ba-wrap{display:none}
+
+  /* 123Teeth section — hide entirely */
+  section.proc-bg{display:none}
+
+  /* Why choose us section — hide infographics, comparison table, sponsors */
+  .cmp{display:none}
+  .why-imgs{display:none}
+  .sponsors{display:none}
+
+  /* Hero — trim decorative elements */
+  .hero-card{display:none}
+  .hero-ln{display:none}
+  .hero-trust{display:none}
+
+  /* Contact section — hide secondary info items, keep form + phone + address */
+  .ci-item:nth-child(3){display:none}   /* hide email row */
+  .ci-item:nth-child(5){display:none}   /* hide text us row */
+
+  /* Pricing — show all 3 cards but hide lengthy feature lists on non-featured */
+  .pr:not(.feat) .pr-list{display:none}
+
+  /* Footer — simplify on mobile */
+  .ftr-links{display:none}
 }
 @media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
 `;
