@@ -264,12 +264,7 @@ export default function OLDv2() {
               <p style={{fontSize:12,color:"var(--t3)",marginTop:8,fontStyle:"italic"}}>Watch Dr. Mike explain the 123Teeth™ process and hear from real patients</p>
             </div>
           </div>
-          {/* Practice Gallery — merged into doctor section */}
-          <div ref={r13.ref} className={`rv gallery ${r13.v?"v":""}`} style={{marginTop:48}}>
-            <div className="gallery-grid">
-              {practicePhotos.map((src, i) => <img key={i} src={src} alt={`Orlando Lifestyle Dentistry practice photo ${i+1}`}/>)}
-            </div>
-          </div>
+
         </div>
       </section>
 
