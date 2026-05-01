@@ -100,13 +100,14 @@ export default function OLDv2() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
+      const data = await res.json();
       if (res.ok) {
         setSubmitted(true);
       } else {
-        alert('Something went wrong. Please call us at (407) 547-6453.');
+        alert(`Error: ${data.error || 'Unknown error'}\n\nPlease call us at (407) 547-6453.`);
       }
-    } catch {
-      alert('Something went wrong. Please call us at (407) 547-6453.');
+    } catch (err) {
+      alert(`Network error: ${err.message}\n\nPlease call us at (407) 547-6453.`);
     } finally {
       setSubmitting(false);
     }
