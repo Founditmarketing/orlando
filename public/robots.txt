@@ -1,0 +1,11 @@
+# robots.txt — Orlando Lifestyle Dentistry
+# https://www.orlandolifestyledentistry.com/
+
+User-agent: *
+Allow: /
+
+# Block API routes from indexing
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.orlandolifestyledentistry.com/sitemap.xml
