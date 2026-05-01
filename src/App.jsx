@@ -88,7 +88,29 @@ export default function OLDv2() {
   const [scrolled, setScrolled] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", smsOptIn: false });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | null
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.phone) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please call us at (407) 547-6453.');
+      }
+    } catch {
+      alert('Something went wrong. Please call us at (407) 547-6453.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 50); window.addEventListener("scroll", fn, { passive: true }); return () => window.removeEventListener("scroll", fn); }, []);
   const [showSticky, setShowSticky] = useState(false);
@@ -512,7 +534,7 @@ export default function OLDv2() {
                     </label>
                     <p className="sms-opt-fine">SMS consent is not required as a condition of purchasing any goods or services. See our <button className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> for details.</p>
                   </div>
-                  <button className="f-sub" onClick={()=>{if(form.name&&form.phone)setSubmitted(true)}}>Request My Free Consultation</button>
+                  <button className="f-sub" onClick={handleSubmit} disabled={submitting}>{submitting ? 'Sending…' : 'Request My Free Consultation'}</button>
                   <p style={{fontSize:11,color:"var(--t3)",textAlign:"center",marginTop:10}}>No obligation · We respond within 5 minutes during business hours</p>
                   <div className="hipaa"><Shield/> Your information is protected under HIPAA privacy regulations. We do not collect health diagnoses or symptoms.</div>
                   <p style={{fontSize:10,color:"var(--t3)",textAlign:"center",marginTop:8,lineHeight:1.6}}>By submitting, you agree to our <button className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> and <button className="lnk-btn" onClick={()=>setModal('terms')}>Terms of Service</button>.</p>
