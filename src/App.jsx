@@ -567,7 +567,7 @@ export default function OLDv2() {
           <div className="ftr-soc">
             <a href="https://www.youtube.com/@orlandolifestyledentistry10" target="_blank" rel="noopener noreferrer">▶</a>
             <a href="https://www.instagram.com/orlandolifestyledentistry" target="_blank" rel="noopener noreferrer">ig</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">fb</a>
+            <a href="https://www.facebook.com/OrlandosPlaceForImplants" target="_blank" rel="noopener noreferrer">fb</a>
           </div>
         </div>
       </footer>
