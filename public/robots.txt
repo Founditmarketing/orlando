@@ -1,5 +1,5 @@
 # robots.txt — Orlando Lifestyle Dentistry
-# https://www.orlandolifestyledentistry.com/
+# https://www.orlandolifestyledentist.com/
 
 User-agent: *
 Allow: /
@@ -8,4 +8,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://www.orlandolifestyledentistry.com/sitemap.xml
+Sitemap: https://www.orlandolifestyledentist.com/sitemap.xml
