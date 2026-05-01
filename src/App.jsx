@@ -118,7 +118,7 @@ export default function OLDv2() {
       <div className={`mob-nav ${menuOpen?"open":""}`}>
         <button className="mob-x" onClick={()=>setMenuOpen(false)}><X/></button>
         {nav.map(n=><a key={n.h} href={n.h} onClick={()=>setMenuOpen(false)}>{n.l}</a>)}
-        <a href="tel:4075476453" className="cta-hdr" style={{marginTop:12}}><Phone/> 407-547-6453</a>
+        <a href="tel:4075476453" className="cta-hdr" style={{marginTop:12}}><Phone/> (407) 547-6453</a>
       </div>
 
       {/* HEADER */}
@@ -127,7 +127,7 @@ export default function OLDv2() {
           <a href="#"><img src={IMG.logo} alt="Orlando Lifestyle Dentistry" className="logo-img"/></a>
           <nav className="nav-d">
             {nav.map(n=><a key={n.h} href={n.h}>{n.l}</a>)}
-            <a href="tel:4075476453" className="cta-hdr"><Phone/> 407-547-6453</a>
+            <a href="tel:4075476453" className="cta-hdr"><Phone/> (407) 547-6453</a>
           </nav>
           <button className="mob-tog" onClick={()=>setMenuOpen(true)}><MenuIco/></button>
         </div>
@@ -526,10 +526,10 @@ export default function OLDv2() {
             </div>
             <div className="ci">
               <div className="ci-item"><div className="ci-ico"><Pin/></div><div className="ci-text"><h4>Visit Us</h4><p>1850 Greenwich Ave<br/>Winter Park, FL 32789</p></div></div>
-              <div className="ci-item"><div className="ci-ico"><Phone/></div><div className="ci-text"><h4>Call Us</h4><p><a href="tel:4075476453">407-547-6453</a></p></div></div>
+              <div className="ci-item"><div className="ci-ico"><Phone/></div><div className="ci-text"><h4>Call Us</h4><p><a href="tel:4075476453">(407) 547-6453</a></p></div></div>
               <div className="ci-item"><div className="ci-ico"><Mail/></div><div className="ci-text"><h4>Email Us</h4><p><a href="mailto:orlandolifestyledentistry@gmail.com">orlandolifestyledentistry@gmail.com</a></p></div></div>
               <div className="ci-item"><div className="ci-ico"><Clock/></div><div className="ci-text"><h4>Hours</h4><p>Mon–Fri: 9:00 AM – 4:00 PM<br/>Sat–Sun: Closed</p></div></div>
-              <div className="ci-item"><div className="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div className="ci-text"><h4>Text Us</h4><p><a href="sms:4075476453">407-547-6453</a><br/><span style={{fontSize:11,color:"var(--t3)"}}>Prefer texting? We respond to SMS too</span></p></div></div>
+              <div className="ci-item"><div className="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div className="ci-text"><h4>Text Us</h4><p><a href="sms:4075476453">(407) 547-6453</a><br/><span style={{fontSize:11,color:"var(--t3)"}}>Prefer texting? We respond to SMS too</span></p></div></div>
             </div>
           </div>
         </div>
@@ -541,7 +541,7 @@ export default function OLDv2() {
         <p style={{color:"var(--t2)",fontSize:16,marginBottom:32,fontWeight:300,maxWidth:500,margin:"0 auto 32px",position:"relative",zIndex:1}}>We will provide you with a clear & concise treatment estimate prior to care. Schedule your no-obligation consultation today.</p>
         <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap",position:"relative",zIndex:1}}>
           <a href="#contact" className="bp">Book Free Consultation <Arrow/></a>
-          <a href="tel:4075476453" className="bs"><Phone/> 407-547-6453</a>
+          <a href="tel:4075476453" className="bs"><Phone/> (407) 547-6453</a>
         </div>
       </div>
 
@@ -553,7 +553,7 @@ export default function OLDv2() {
             <address className="ftr-nap">
               <strong>Orlando Lifestyle Dentistry</strong><br/>
               1850 Greenwich Ave, Winter Park, FL 32789<br/>
-              <a href="tel:4075476453">407-547-6453</a>
+              <a href="tel:4075476453">(407) 547-6453</a>
             </address>
             <span className="ftr-copy">© {new Date().getFullYear()} Orlando Lifestyle Dentistry. All rights reserved.</span>
           </div>
@@ -618,7 +618,7 @@ export default function OLDv2() {
               <p>You may request to review, correct, or delete any personal information we have collected from you by contacting us at <a href="mailto:orlandolifestyledentistry@gmail.com">orlandolifestyledentistry@gmail.com</a> or calling <a href="tel:4075476453">407-547-6453</a>.</p>
 
               <h3>9. Contact Us</h3>
-              <p>Orlando Lifestyle Dentistry<br/>1850 Greenwich Ave, Winter Park, FL 32789<br/>Phone: 407-547-6453<br/>Email: orlandolifestyledentistry@gmail.com</p>
+              <p>Orlando Lifestyle Dentistry<br/>1850 Greenwich Ave, Winter Park, FL 32789<br/>Phone: (407) 547-6453<br/>Email: orlandolifestyledentistry@gmail.com</p>
             </div>
           </div>
         </div>
@@ -660,7 +660,7 @@ export default function OLDv2() {
               <p>We reserve the right to update these Terms at any time. Continued use of this website after changes constitutes acceptance of the revised terms.</p>
 
               <h3>10. Contact Us</h3>
-              <p>Orlando Lifestyle Dentistry<br/>1850 Greenwich Ave, Winter Park, FL 32789<br/>Phone: 407-547-6453<br/>Email: orlandolifestyledentistry@gmail.com</p>
+              <p>Orlando Lifestyle Dentistry<br/>1850 Greenwich Ave, Winter Park, FL 32789<br/>Phone: (407) 547-6453<br/>Email: orlandolifestyledentistry@gmail.com</p>
             </div>
           </div>
         </div>
