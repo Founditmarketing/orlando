@@ -131,6 +131,18 @@ img{max-width:100%;display:block}
 .hipaa{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;font-size:10.5px;color:var(--t3);letter-spacing:0.3px}
 .hipaa svg{color:var(--teal);flex-shrink:0}
 
+/* ─── SMS OPT-IN ─── */
+.sms-opt{margin:18px 0 4px;background:rgba(20,178,202,0.04);border:1px solid var(--brd2);border-radius:var(--r);padding:14px 16px}
+.sms-opt-label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;position:relative}
+.sms-opt-check{position:absolute;opacity:0;width:0;height:0}
+.sms-opt-box{flex-shrink:0;width:18px;height:18px;border-radius:5px;border:1.5px solid var(--t3);background:var(--bg);transition:all 0.25s var(--ease);margin-top:1px;display:flex;align-items:center;justify-content:center}
+.sms-opt-check:checked~.sms-opt-box{background:var(--teal);border-color:var(--teal)}
+.sms-opt-check:checked~.sms-opt-box::after{content:'✓';color:var(--bg);font-size:11px;font-weight:900;line-height:1}
+.sms-opt-label:hover .sms-opt-box{border-color:var(--teal)}
+.sms-opt-text{font-size:11.5px;color:var(--t2);line-height:1.7;font-weight:300}
+.sms-opt-text strong{color:var(--t1);font-weight:600}
+.sms-opt-fine{font-size:10px;color:var(--t3);margin-top:8px;line-height:1.6;padding-left:30px}
+
 /* ─── SMS BUTTON ─── */
 .sms-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;background:transparent;border:1px solid rgba(37,211,102,0.3);color:#25D366;font-weight:600;font-size:13px;text-decoration:none;font-family:var(--sans);transition:all 0.3s var(--ease);cursor:pointer}
 .sms-btn:hover{background:rgba(37,211,102,0.08);border-color:#25D366}

@@ -86,7 +86,7 @@ const Zap = () => <svg width="15" height="15" viewBox="0 0 24 24" fill="none" st
 export default function OLDv2() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", email: "", service: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", smsOptIn: false });
   const [submitted, setSubmitted] = useState(false);
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | null
 
@@ -497,6 +497,22 @@ export default function OLDv2() {
                       <option value="full">Full Mouth Implants (123Teeth™)</option>
                       <option value="unsure">Not Sure — Need Guidance</option>
                     </select>
+                  </div>
+                  <div className="sms-opt">
+                    <label className="sms-opt-label">
+                      <input
+                        type="checkbox"
+                        id="sms-consent"
+                        className="sms-opt-check"
+                        checked={form.smsOptIn}
+                        onChange={e=>setForm({...form,smsOptIn:e.target.checked})}
+                      />
+                      <span className="sms-opt-box"/>
+                      <span className="sms-opt-text">
+                        I agree to receive SMS text messages from Orlando Lifestyle Dentistry at the phone number provided above. Message frequency varies. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help.
+                      </span>
+                    </label>
+                    <p className="sms-opt-fine">SMS consent is not required as a condition of purchasing any goods or services. See our <button className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> for details.</p>
                   </div>
                   <button className="f-sub" onClick={()=>{if(form.name&&form.phone)setSubmitted(true)}}>Request My Free Consultation</button>
                   <p style={{fontSize:11,color:"var(--t3)",textAlign:"center",marginTop:10}}>No obligation · We respond within 5 minutes during business hours</p>
