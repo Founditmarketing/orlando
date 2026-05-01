@@ -256,7 +256,10 @@ export default function OLDv2() {
               </div>
               {/* YouTube Video */}
               <div className="vid-wrap" style={{marginTop:32}}>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=UU_YourChannelPlaylistID" title="Dr. Mike — Orlando Lifestyle Dentistry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy"/>
+                <video controls playsInline preload="metadata" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"inherit"}}>
+                  <source src="/video.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p style={{fontSize:12,color:"var(--t3)",marginTop:8,fontStyle:"italic"}}>Watch Dr. Mike explain the 123Teeth™ process and hear from real patients</p>
             </div>
