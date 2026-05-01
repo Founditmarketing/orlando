@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     const dialPhone    = phone.replace(/\D/g, '');
 
     const { data, error } = await resend.emails.send({
-      from:     'Orlando Lifestyle Dentistry <hello@orlandolifestyledentistry.com>',
+      from:     'Orlando Lifestyle Dentistry <hello@orlandolifestyledentist.com>',
       to:       ['orlandolifestyledentistry@gmail.com'],
       reply_to: email || undefined,
       subject:  `New Consultation Request — ${name}`,
