@@ -91,7 +91,8 @@ export default function OLDv2() {
   const [submitting, setSubmitting] = useState(false);
   const [modal, setModal] = useState(null); // 'privacy' | 'terms' | null
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
     if (!form.name || !form.phone) return;
     setSubmitting(true);
     try {
@@ -102,6 +103,9 @@ export default function OLDv2() {
       });
       const data = await res.json();
       if (res.ok) {
+        // Fire GTM dataLayer event on successful submission
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'form_submitted_consultation' });
         setSubmitted(true);
       } else {
         alert(`Error: ${data.error || 'Unknown error'}\n\nPlease call us at (407) 547-6453.`);
@@ -506,7 +510,7 @@ export default function OLDv2() {
               {submitted ? (
                 <div className="f-ok"><h3>Thank You!</h3><p>We've received your request and will reach out within 5 minutes during business hours. We can't wait to help you smile again.</p></div>
               ) : (
-                <div>
+                <form onSubmit={handleSubmit} noValidate>
                   <div className="fg"><label>Your Name *</label><input type="text" placeholder="First and last name" value={form.name} onChange={e=>setForm({...form,name:e.target.value})}/></div>
                   <div className="fg"><label>Phone Number *</label><input type="tel" placeholder="(555) 123-4567" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})}/></div>
                   <div className="fg"><label>Email Address</label><input type="email" placeholder="you@email.com" value={form.email} onChange={e=>setForm({...form,email:e.target.value})}/></div>
@@ -533,13 +537,13 @@ export default function OLDv2() {
                         I agree to receive SMS text messages from Orlando Lifestyle Dentistry at the phone number provided above. Message frequency varies. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help.
                       </span>
                     </label>
-                    <p className="sms-opt-fine">SMS consent is not required as a condition of purchasing any goods or services. See our <button className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> for details.</p>
+                    <p className="sms-opt-fine">SMS consent is not required as a condition of purchasing any goods or services. See our <button type="button" className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> for details.</p>
                   </div>
-                  <button className="f-sub" onClick={handleSubmit} disabled={submitting}>{submitting ? 'Sending…' : 'Request My Free Consultation'}</button>
+                  <button type="submit" className="f-sub" disabled={submitting}>{submitting ? 'Sending…' : 'Request My Free Consultation'}</button>
                   <p style={{fontSize:11,color:"var(--t3)",textAlign:"center",marginTop:10}}>No obligation · We respond within 5 minutes during business hours</p>
                   <div className="hipaa"><Shield/> Your information is protected under HIPAA privacy regulations. We do not collect health diagnoses or symptoms.</div>
-                  <p style={{fontSize:10,color:"var(--t3)",textAlign:"center",marginTop:8,lineHeight:1.6}}>By submitting, you agree to our <button className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> and <button className="lnk-btn" onClick={()=>setModal('terms')}>Terms of Service</button>.</p>
-                </div>
+                  <p style={{fontSize:10,color:"var(--t3)",textAlign:"center",marginTop:8,lineHeight:1.6}}>By submitting, you agree to our <button type="button" className="lnk-btn" onClick={()=>setModal('privacy')}>Privacy Policy</button> and <button type="button" className="lnk-btn" onClick={()=>setModal('terms')}>Terms of Service</button>.</p>
+                </form>
               )}
             </div>
             <div className="ci">
